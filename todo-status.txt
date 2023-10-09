@@ -1,0 +1,3 @@
+~/git/status (site status? tests status?)
+~/git/tests
+~/git/code-checkers и тд побольше repos служебных

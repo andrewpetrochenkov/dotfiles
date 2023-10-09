@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+min=7
+
+say "закиньте макарошки в кипящую воду и варите 7 минут" || exit
+growlnotify -t "Макарошки"
+
+while :; do
+    s="$(pid-elapsed --seconds $$)" || exit
+    m="$(pid-elapsed --minutes $$)" || exit
+
+    [[ $m -gt $min ]] &&[[ $(($s%60)) == 0 ]] && {
+        say "Макарошки варятся уже [[ru:minutes $m]]" || exit
+        growlnotify -t "Макарошки" -m "$m:00" -s || exit
+    }
+    sleep 1
+done;:
+

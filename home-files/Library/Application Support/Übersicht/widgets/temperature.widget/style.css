@@ -1,0 +1,25 @@
+top: 1%;
+right: 3%;
+visible: hidden;
+
+td
+    margin: 0px
+    padding: 0px
+
+img.weather
+    width: 50px
+    height: 80px
+
+img.imac
+    width: 32px
+    height: 32px
+    margin-left: 10px
+
+.ok
+    color: green
+
+.low
+    color: blue
+
+.high
+    color: red

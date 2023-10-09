@@ -1,0 +1,7 @@
+scripts/
+dev-scripts/
+----
+domain/delete.py
+domain/orphaned.py -
+1) output list
+2) open url

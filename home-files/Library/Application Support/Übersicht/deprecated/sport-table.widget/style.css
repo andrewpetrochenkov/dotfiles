@@ -1,0 +1,74 @@
+#sport-table-widget-update-coffee {
+	color: grey;
+	font-size: 22px;
+	top: 1.5%;
+	width: 100%;
+}
+
+#sport-table-widget-update-coffee table {
+	width: 100%;
+}
+
+#sport th, #sport td {
+	text-align: center;
+	width: 150px;
+}
+
+#sport th {
+	font-size: 30px;
+	white-space: nowrap;
+}
+#sport .sum {
+	margin-top: 10px;
+	border-top: 1px solid white;
+}
+
+#sport td {
+	font-size: 28px;
+}
+
+#sport th {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	/* background-size:128px 128px; */
+	background-size:64px 64px;
+	background-position: 40% 40px;
+	/* height: 165px; */
+	height: 105px;
+	vertical-align:top;
+}
+
+#sport th.active {
+	color: green;
+	font-weight: bold;
+	font-size: 40px;
+	border: 2px solid red;
+}
+
+th.abdominal {
+	background-image: url('../png/abdominal.png');
+}
+
+th.barbell {
+	background-image: url('../png/barbell.png');
+}
+th.bregg {
+	background-image: url('../png/bregg.jpg');
+}
+th.dumbbells {
+	background-image: url('../png/dumbbells.png');
+}
+th.pullup {
+	background-image: url('../png/pullup.png');
+}
+th.pushups {
+	background-image: url('../png/pushups.png');
+}
+th.running {
+	background-image: url('../png/running.png');
+}
+th.squats {
+	background-image: url('../png/squats.png');
+}
+
+

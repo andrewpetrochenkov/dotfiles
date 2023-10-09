@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+min=3
+
+while :; do
+    s="$(pid-elapsed --seconds $$)" || exit
+    m="$(pid-elapsed --minutes $$)" || exit
+
+    [[ $m -gt $min ]] &&[[ $(($s%60)) == 0 ]] && {
+        say "Вода кипятится уже [[ru:minutes $m]]" || exit
+        growlnotify -t "Вода кипятится" -m "$m:00" -s || exit
+    }
+    sleep 1
+done;:

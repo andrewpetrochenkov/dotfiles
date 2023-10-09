@@ -1,0 +1,2 @@
+pypi-projects-json аналогично
+no releases как version list

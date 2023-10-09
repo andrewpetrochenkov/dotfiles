@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+[ -d ~/.env ] && {
+    env_files="$(find ~/.env -type f -name "*.env")" || exit
+    [[ -n "$env_files" ]] && while IFS= read f; do
+        . "$f" || exit
+    done <<< "$env_files"
+}
+[ -f ~/.path ] && { . ~/.path || exit; };:

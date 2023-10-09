@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+min=5
+
+# http://ivona.bigmir.net/cooking/toowners/18076-varim-sosiski
+# 1. очистить от пленки
+# 2. бросить в кипяток
+# 3. варить 2-5 минут в закрытой посуде
+
+say "Яйца нужно положить в кипящую воду и варить 10 минут" &
+growlnotify -t "title" -m "1. очистить от пленки
+2. бросить в кипяток
+3. варить 2-5 минут в закрытой посуде" -s
+
+while :; do
+    s="$(pid-elapsed --seconds $$)" || exit
+    m="$(pid-elapsed --minutes $$)" || exit
+
+    [[ $m -gt $min ]] &&[[ $(($s%60)) == 0 ]] && {
+        say "Сосиски варятся уже [[ru:minutes $m]]" || exit
+        growlnotify -t "Сосиски" -m "$m:00" -s || exit
+    }
+    sleep 1
+done;:
+

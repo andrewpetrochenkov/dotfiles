@@ -1,0 +1,51 @@
+<div id="sport">
+    <table>
+        <tr>
+            <th class="squats{% if ACTIVE == "squats" %} active{% endif %}">Приседания</th>
+            <th class="pushups{% if ACTIVE == "pushups" %} active{% endif %}">Отжимания</th>
+            <th class="barbell{% if ACTIVE == "barbell" %} active{% endif %}">Штанга ({{ barbell_kg }}kg)</th>
+            <th class="dumbbells{% if ACTIVE == "dumbbells" %} active{% endif %}">Гантели</th>
+            <th class="pullup{% if ACTIVE == "pullup" %} active{% endif %}">Подтягивания</th>
+            <th class="abdominal{% if ACTIVE == "abdominal" %} active{% endif %}">Пресс</th>
+            <th class="bregg{% if ACTIVE == "bregg" %} active{% endif %}">Брегг</th>
+            <th class="running{% if ACTIVE == "running" %} active{% endif %}">Бег</th>
+        </tr>
+        <tr>
+            <td class="SQUATS">
+            {% with rows=SQUATS %}
+                {% include "rows.jinja" %}
+            {% endwith %}
+            <td class="PUSHUPS">
+            {% with rows=PUSHUPS %}
+                {% include "rows.jinja" %}
+            {% endwith %}
+            </td>
+            <td class="BARBELL">
+            {% with rows=BARBELL %}
+                {% include "rows.jinja" %}
+            {% endwith %}
+            </td>
+            <td class="DUMBBELLS">
+            {% with rows=DUMBBELLS %}
+                {% include "rows.jinja" %}
+            {% endwith %}
+            </td>
+            <td class="ABDOMINAL">
+            {% with rows=ABDOMINAL %}
+                {% include "rows.jinja" %}
+            {% endwith %}
+            </td>
+            <td class="PULLUP">
+            {% with rows=PULLUP %}
+                {% include "rows.jinja" %}
+            {% endwith %}
+            </td>
+            <td class="bregg">
+            todo
+            </td>
+            <td class="running">
+            todo
+            </td>
+        </tr>
+    </table>
+</div>

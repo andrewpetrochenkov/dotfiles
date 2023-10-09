@@ -1,0 +1,3 @@
+https://pypi.org/project/psutil/
+admin все hardware в admin
+но придется models c lifehacks

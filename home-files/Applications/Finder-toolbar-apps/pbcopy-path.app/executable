@@ -1,0 +1,36 @@
+#!/usr/bin/env log-exec bash
+
+IFS=
+[[ $1 == "-psn_"* ]] && shift
+# LC_ALL required for non english paths
+[ -e ~/.bashrc ] && { . ~/.bashrc || exit; }
+
+selection="$(finder-selection)" || exit
+
+[[ "$selection" != /* ]] && {
+    # -600: Finder not work (reboot required)
+    echo $Finder
+    growlnotify -t "ERROR" -m "$selection" -a "Finder" -s
+    exit 1
+}
+count=$(echo "$selection" | wc -l | tr -d ' ')
+if [[ "$count" == "1" ]]; then
+    echo "$selection" | tr -d '\n' | pbcopy
+else
+    echo "$selection" | pbcopy
+fi
+if [ -e /usr/local/bin/growlnotify ]; then
+    if [[ $count == 1 ]]; then
+        title="$(dirname "$selection")"
+    else
+        title="$count Finder items"
+    fi
+    message="$selection"
+    app="$(dirname "$(dirname "$(dirname "$0")")")"
+    growlnotify -t "$title" -m "$message" -a "$app"
+else
+    osascript <<EOF 2> /dev/null
+display notification "$selection"
+EOF
+fi
+

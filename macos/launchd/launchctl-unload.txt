@@ -1,0 +1,284 @@
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.abd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.abd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.AssistantService.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.AssistantService.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.ContactsAccountsService.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.ContactsAccountsService.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.SourceSync.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.SourceSync.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.AirPlayUIAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.AirPlayUIAgent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.AirPortBaseStationAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.AirPortBaseStationAgent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.AOSHeartbeat.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.AOSHeartbeat.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.AOSPushRelay.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.AOSPushRelay.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.postinstall.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.postinstall.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.postinstall.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.postinstall.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.assistant_service.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.assistant_service.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.assistantd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.assistantd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.avatarsd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.avatarsd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.bird.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.bird.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.CalendarAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.CalendarAgent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.CallHistoryPluginHelper.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.CallHistoryPluginHelper.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.CallHistorySyncHelper.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.CallHistorySyncHelper.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.cloudd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.cloudd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.cloudpaird.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.cloudpaird.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.cloudphotod.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.cloudphotod.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.commerce.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.commerce.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.corespeechd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.corespeechd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.corespotlightd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.corespotlightd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.DictationIM.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.DictationIM.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.familycircled.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.familycircled.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.familycontrols.useragent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.familycontrols.useragent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.familynotificationd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.familynotificationd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.findmymacmessenger.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.findmymacmessenger.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.followupd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.followupd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.homed.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.homed.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.findmydeviced.findmydevice-user-agent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.findmydeviced.findmydevice-user-agent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.fmfd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.fmfd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.searchpartyuseragent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.searchpartyuseragent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.iCloudNotificationAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.iCloudNotificationAgent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.iCloudUserNotifications.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.iCloudUserNotifications.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.itunescloudd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.itunescloudd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.knowledge-agent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.knowledge-agent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.ManagedClientAgent.agent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ManagedClientAgent.agent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.ManagedClientAgent.agent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ManagedClientAgent.agent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.ManagedClientAgent.enrollagent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ManagedClientAgent.enrollagent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.ManagedClientAgent.enrollagent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ManagedClientAgent.enrollagent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.Maps.pushdaemon.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.Maps.pushdaemon.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.Maps.pushdaemon.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.Maps.pushdaemon.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.metadata.mdbulkimport.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.metadata.mdbulkimport.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.metadata.mdflagwriter.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.metadata.mdflagwriter.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.metadata.mdwrite.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.metadata.mdwrite.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.parentalcontrols.check.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.parentalcontrols.check.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.parsecd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.parsecd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.passd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.passd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.photolibraryd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.photolibraryd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.PhotoLibraryMigrationUtility.XPC.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.PhotoLibraryMigrationUtility.XPC.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.rapportd-user.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rapportd-user.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.remindd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.remindd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.RemoteDesktop.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.RemoteDesktop.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.routined.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.routined.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.SafeEjectGPUAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.SafeEjectGPUAgent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.screensharing.agent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.screensharing.agent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.screensharing.menuextra.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.screensharing.menuextra.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.screensharing.MessagesAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.screensharing.MessagesAgent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.sharingd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.sharingd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.Siri.agent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.Siri.agent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.siriknowledged.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.siriknowledged.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.spindump_agent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.spindump_agent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.SSInvitationAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.SSInvitationAgent.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.suggestd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.suggestd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.symptomsd-diag.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.symptomsd-diag.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.syncdefaultsd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.syncdefaultsd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.syncdefaultsd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.syncdefaultsd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.syncservices.SyncServer.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.syncservices.SyncServer.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.syncservices.uihandler.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.syncservices.uihandler.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.telephonyutilities.callservicesd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.telephonyutilities.callservicesd.plist
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.translationd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.translationd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.afpfs_afpLoad.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.afpfs_afpLoad.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.afpfs_checkafp.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.afpfs_checkafp.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.AirPlayXPCHelper.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.AirPlayXPCHelper.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.airport.wps.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.airport.wps.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.airportd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.airportd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.appleseed.fbahelperd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.appleseed.fbahelperd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.appleseed.fbahelperd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.appleseed.fbahelperd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.apsd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.apsd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.biometrickitd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.biometrickitd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.bluetoothd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.bluetoothd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.captiveagent.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.captiveagent.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.cloudd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.cloudd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.cmio.AppleCameraAssistant.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.cmio.AppleCameraAssistant.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.cmio.AVCAssistant.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.cmio.AVCAssistant.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.cmio.IIDCVideoAssistant.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.cmio.IIDCVideoAssistant.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.cmio.iOSScreenCaptureAssistant.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.cmio.iOSScreenCaptureAssistant.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.cmio.VDCAssistant.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.cmio.VDCAssistant.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.familycontrols.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.familycontrols.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.findmymac.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.findmymac.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.findmymacmessenger.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.findmymacmessenger.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.icloud.findmydeviced.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.icloud.findmydeviced.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.icloud.searchpartyd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.icloud.searchpartyd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.locationd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.locationd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.cloudconfigurationd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.cloudconfigurationd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.cloudconfigurationd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.cloudconfigurationd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.enroll.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.enroll.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.enroll.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.enroll.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.mechanism.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.mechanism.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.mechanism.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.mechanism.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.startup.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.startup.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.startup.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.startup.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.index.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.index.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.scan.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.scan.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.spindump.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.spindump.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.msrpc.echosvc.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.msrpc.echosvc.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.msrpc.lsarpc.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.msrpc.lsarpc.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.msrpc.mdssvc.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.msrpc.mdssvc.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.msrpc.netlogon.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.msrpc.netlogon.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.msrpc.srvsvc.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.msrpc.srvsvc.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.msrpc.wkssvc.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.msrpc.wkssvc.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.netbiosd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.netbiosd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.rapportd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.rapportd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.RemoteDesktop.PrivilegeProxy.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.RemoteDesktop.PrivilegeProxy.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.remotemanagementd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.remotemanagementd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.remotepairtool.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.remotepairtool.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.revisiond.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.revisiond.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.RFBEventHelper.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.RFBEventHelper.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.rtcreportingd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.rtcreportingd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.SafeEjectGPUStartupDaemon.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.SafeEjectGPUStartupDaemon.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.screensharing.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.screensharing.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.security.FDERecoveryAgent.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.security.FDERecoveryAgent.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.security.FDERecoveryAgent.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.security.FDERecoveryAgent.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.siri.morphunassetsupdaterd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.siri.morphunassetsupdaterd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.siriinferenced.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.siriinferenced.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.siriinferenced.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.siriinferenced.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.smb.preferences.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.smb.preferences.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.spindump.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.spindump.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd-diag.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd-diag.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.uucp.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.uucp.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/ntalk.plist
+launchctl unload -w /System/Library/LaunchDaemons/ntalk.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/tftp.plist
+launchctl unload -w /System/Library/LaunchDaemons/tftp.plist

@@ -1,0 +1,6 @@
+#!/usr/bin/env log-exec bash
+# -*- coding: utf-8 -*-
+
+selection="$(finder-selection)" || exit
+webloc="$(find "$selection" -name "*.webloc" 2> /dev/null)"
+[[ -n "$webloc" ]] && { python3 -m jsfiddle_generator.repo "$selection" || exit; };:

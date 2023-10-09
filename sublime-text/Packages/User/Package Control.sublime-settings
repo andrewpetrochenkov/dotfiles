@@ -1,0 +1,52 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		//"Anaconda",
+		"Ansible",
+		"AppleScript Extensions",
+		"ApplySyntax",
+		"AutoFileName",
+		"Awk",
+		"Better CoffeeScript",
+		"Bracketeer",
+		"ChannelRepositoryTools",
+		"Color Highlighter",
+		"Djaneiro",
+		"EditorConfig",
+		"Emmet",
+		"Material Theme",
+		"Nodejs",
+		"Open Folder",
+		"Open In Browser",
+		"PackageDev",
+		"Package Control",
+		"plist",
+		"Pretty JSON",
+		"Sass",
+		"SublimeLinter",
+		"SublimeLinter-contrib-yamllint",
+		"Swift",
+
+		"sublime-nginx",
+
+		"SublimeLinter",
+
+		"sublime-terminal-command",
+		"sublime-webloc"
+	],
+	"repositories":
+	[
+		"https://github.com/brandonwamboldt/sublime-nginx",
+		"https://github.com/andrewp-as-is/sublime-api",
+		"https://github.com/andrewp-as-is/sublime-duplicate-file",
+		"https://github.com/andrewp-as-is/sublime-terminal-command",
+		"https://github.com/andrewp-as-is/sublime-webloc"
+	],
+	"repository_channels": [
+		"https://sublime.wbond.net/repositories.json"
+	]
+}

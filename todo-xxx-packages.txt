@@ -1,0 +1,6 @@
+django-packages и тд repo generator для профиля
+тогда логичнее
+my-django-packages
+my-python-packages
+my-gists
+и тд

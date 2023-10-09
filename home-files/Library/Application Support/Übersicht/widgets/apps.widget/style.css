@@ -1,0 +1,8 @@
+top: 50%
+left: 50%
+color: grey
+font-size: 48px
+text-align:center
+
+position: fixed
+transform: translate(-50%, 0)

@@ -1,0 +1,1 @@
+:snake: @accepts decorator to check arguments types

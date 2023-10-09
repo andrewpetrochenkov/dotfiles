@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+IMAGE="${BASH_SOURCE[0]%/*}/unloaded.png"
+
+list="$(launchctl list | grep scripts_)"
+[[ -n "$list" ]] && exit
+
+/usr/local/bin/growlnotify -m "LaunchAgents" --image "$IMAGE" 2> /dev/null || {
+    ps -ax | grep -v grep | grep -q Growl.app || {
+        [[ -z "$(lsappinfo info -only pid Growl)" ]] && { open -a Growl; exit; }
+    }
+};:
+# /usr/bin/afplay /System/Library/Sounds/Funk.aiff

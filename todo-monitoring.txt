@@ -1,0 +1,15 @@
+django-incident-monitoring
+models Incident
+admin Incident
+incidents.json with etag/http-modified-at
+
+incidents.json checker
+---
+incident resolved yes/no
+полезно для history тк удалять это только dev вариант в 1 лицо
+---
+status.json yes/no
+{
+    'success': true/false
+}
+что-то типа того. примерно. простое yes/no

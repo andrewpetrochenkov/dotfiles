@@ -1,0 +1,10 @@
+DEBUG 	- 	executed before every simple command
+EXIT 	- 	executed on shell exit
+ERR		-	executed each time a command's failure would cause the shell to exit when the -e' option (''errexit'') is enabled
+RETURN	-	executed when a shell function or a sourced code finishes executing
+SIGALRM
+SIGHUP
+SIGINT - ctrl-c interrupt
+SIGQUIT
+SIGKILL
+SIGTERM - killed

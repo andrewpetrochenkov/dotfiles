@@ -1,0 +1,7 @@
+no rdr inet proto tcp from 127.0.0.1 port 8080
+
+# rdr pass on lo0 inet proto tcp from any to any port 80 -> 127.0.0.1 port 8080
+# rdr pass on en0 inet proto tcp from any to any port 80 -> 127.0.0.1 port 8080
+# rdr pass on en1 inet proto tcp from any to any port 80 -> 127.0.0.1 port 8080
+
+# rdr pass inet proto tcp from any to any port 80 -> 127.0.0.1 port 8080

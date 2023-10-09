@@ -1,0 +1,11 @@
+{% if rows %}
+    {% for count in rows.splitlines() %}
+        {{ count }}<br />
+    {% endfor %}
+    <br />
+    {% if len(rows.splitlines())>1 %}
+    <span class="sum">
+    {{ sum(map(int,rows.splitlines())) }}
+    </span>
+    {% endif %}
+{% endif %}

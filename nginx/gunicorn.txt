@@ -1,0 +1,11 @@
+gunicorn workout_project.wsgi:application --bind=127.0.0.1:8001 --daemon
+
+gunicorn workout_project.wsgi:application --bind=127.0.0.1:8001
+
+--access-logfile /tmp/gunicorn.log --error-logfile /tmp/gunicorn.err --workers=40
+
+
+gunicorn --env DJANGO_SETTINGS_MODULE=workout_project.settings workout_project.wsgi:application --bind=127.0.0.1:8001
+
+
+# static not found

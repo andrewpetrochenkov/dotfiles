@@ -1,0 +1,62 @@
+#!/usr/bin/env log-exec bash
+
+IFS=
+[[ $1 == "-psn_"* ]] && shift
+# LC_ALL required for non english paths
+[ -e ~/.bashrc ] && { set -x; . ~/.bashrc; { set +x; } 2>/dev/null; }
+
+selection="$(set -x; . "${BASH_SOURCE[0]%/*}"/selection.sh)" || exit
+
+
+unset -f subl &> /dev/null
+if [ -e "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ]; then
+    function subl() {
+        local subl="/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl"
+        "$subl" "$@"
+    }
+fi
+if [ -e "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ]; then
+    function subl() {
+        local subl="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+        "$subl" "$@"
+    }
+fi
+type subl &> /dev/null || {
+    echo "ERROR: Sublime Text NOT INSTALLED"
+    exit 1
+}
+
+IFS=
+[[ "$selection" != /* ]] && {
+    # -600: Finder not work (reboot required)
+    echo $Finder
+    growlnotify -t "ERROR" -m "$selection" -a "Finder" -s
+    exit 1
+}
+[[ -z $selection ]] && exit
+
+osascript <<EOF
+on is_running(appName)
+    tell application "System Events" to (name of processes) contains appName
+end is_running
+
+set _st2 to is_running("Sublime Text 2")
+set _st to is_running("Sublime Text")
+
+tell application "Finder"
+    set l to {}
+    repeat with s in (get selection)
+        set end of l to s as alias
+    end repeat
+    if _st then
+        tell application "Sublime Text"
+            open l
+        end tell
+    end if
+    if _st2 then
+        tell application "Sublime Text 2"
+            open l
+        end tell
+    end if
+end tell
+EOF

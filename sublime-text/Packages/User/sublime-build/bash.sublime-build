@@ -1,0 +1,12 @@
+{
+    "selector": "source.shell, source.bash, source.sh",
+    "cmd": ["bash","-l","$file"],
+    "variants":
+    [
+        {
+            "name": "Run",
+            "cmd": ["bash","-l","$file"]
+        }
+    ],
+    "working_dir": "${project_path:${folder}}"
+}

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /*?*
+Disallow: /p/*/*/
+Disallow: /p/*/*/*
+
+Sitemap: https://python42.com/sitemap.xml

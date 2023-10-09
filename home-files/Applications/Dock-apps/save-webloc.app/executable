@@ -1,0 +1,50 @@
+#!/usr/bin/env app bash
+# -*- coding: utf-8 -*-
+
+app="$(app-frontmost --name)" || exit
+[[ "$app" != "Google Chrome" ]] && {
+    /usr/bin/afplay /System/Library/Sounds/Frog.aiff
+    /usr/local/bin/growlnotify -t "$app" -m "" -a "Safari"
+    echo "SKIP: $app" && exit
+}
+
+url="$(chrome-url)"
+selection="$(finder-selection)" || exit
+
+[[ -z "$selection" ]] && echo "SKIP: selection EMPTY" && exit
+! [ -e "$selection" ] && echo "SKIP: selection NOT EXISTS" && exit
+
+[ -f "$selection" ] && selection="${selection%/*}"
+selection_basename="$(basename "$selection")" || exit
+url_basename="$(basename "$url")" || exit
+
+[ -d "$selection" ] && {
+    files="$(find "$selection" -type f -name "*.webloc" -maxdepth 1)" || exit
+    [[ -n "$files" ]] && while IFS= read f; do
+        _url="$(/usr/libexec/PlistBuddy -c "Print URL" "$f")" || exit
+        [[ "$_url" == "$url" ]] && {
+            /usr/bin/afplay /System/Library/Sounds/Frog.aiff
+            /usr/local/bin/growlnotify -t "${f##*/}" -m "${f/$HOME/\~}" -a "Safari"
+            echo "SKIP: $f" && exit
+        }
+        [[ "$url" == "$_url"* ]] || [[ "$url" == "$_url"/* ]] && {
+            dst_folder="$selection/$url_basename"; break
+        } || {
+            dst_folder="$(true-case-path "${selection%/*}/$url_basename")" || exit
+            [[ -z "$dst_folder" ]] && dst_folder="${selection%/*}/$url_basename"
+            break
+        }
+    done <<< "$files"
+}
+true_case_path="$(true-case-path "$selection/$url_basename")" || exit
+[ -e "$true_case_path" ] && dst_folder="$true_case_path"
+shopt -s nocasematch
+[[ -z "$dst_folder" ]] && [[ "$selection_basename" == "$url_basename" ]] && dst_folder="$selection"
+[[ -z "$dst_folder" ]] && dst_folder="$selection/$url_basename"
+dst="$dst_folder/$url_basename.webloc"
+! [ -e "${dst%/*}" ] && { mkdir -p "${dst%/*}" || exit; }
+finder-reveal "${dst%/*}" || exit
+/usr/libexec/PlistBuddy -c "Add URL string '$url'" "$dst" 1> /dev/null || exit
+/usr/bin/afplay /System/Library/Sounds/Glass.aiff
+/usr/local/bin/growlnotify -t "${dst##*/}" -m "${dst/$HOME/\~}" -a "Safari"
+echo "$dst"

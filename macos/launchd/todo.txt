@@ -1,0 +1,11 @@
+set "$@" com.apple.CoreLocationAgent # manages location authorization prompts
+# set "$@" com.apple.coreservices.sharedfilelistd
+
+
+
+TVCacheExtension
+AppleCameraAssistant
+corespotlightd
+CalendarAgent
+AirPlayXPCHelper
+useractivityd

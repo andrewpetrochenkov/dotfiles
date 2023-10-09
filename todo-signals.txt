@@ -1,0 +1,10 @@
+set_db_table можно в package вынести
+---
+django-model-meta-db-table.py
+django-db-table.py
+
+naming не очевидный
+django_app_db_schema
+naming hell )
+---
+verbose_name_plural

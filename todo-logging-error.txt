@@ -1,0 +1,9 @@
+logging.error(e)
+save_error в logging.error(e) ?
+django-logging-error
+---
+logging.Handler
+но там нигде не принимает e
+---
+django-error
+django-logging-error

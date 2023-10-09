@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /*?*
+Disallow: /p/*/*/
+Disallow: /p/*/*/*
+
+Sitemap: https://m.django42.com/sitemap.xml

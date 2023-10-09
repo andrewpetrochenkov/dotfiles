@@ -1,0 +1,37 @@
+#!/usr/bin/env app
+
+selection="$(/usr/local/bin/finder-selection)" || exit
+! [ -e "$selection" ] && {
+    /usr/bin/afplay /System/Library/Sounds/Basso.aiff
+    /usr/local/bin/growlnotify -t "" -m "selection NOT EXISTS" -a Finder -s
+    echo "SKIP: $selection NOT EXISTS" && exit
+}
+! [ -d "$selection" ] && {
+    /usr/bin/afplay /System/Library/Sounds/Basso.aiff
+    /usr/local/bin/growlnotify -t "" -m "NOT A DIRECTORY" -a Finder -s
+    echo "SKIP: $selection NOT A DIRECTORY" && exit
+}
+
+# CMD+C
+osascript -e 'tell application "System Events" to keystroke "c" using {command down}'
+sleep 0.1
+
+clipboard="$(pbpaste)" || exit
+[[ -z "$clipboard" ]] && {
+    /usr/bin/afplay /System/Library/Sounds/Basso.aiff
+    /usr/local/bin/growlnotify -t "" -m "empty clipboard" -a Finder -s
+    echo "SKIP: empty clipboard"; exit
+}
+
+lines_count="$(echo "$clipboard" | wc -l | tr -d ' ')"
+[[ $lines_count -gt 1 ]] && echo "SKIP: $lines_count lines" && exit
+
+path="$selection/$clipboard"
+[ -e "$path" ] && echo "SKIP: $path EXISTS" && exit
+err="$(mkdir "$path")" || {
+    /usr/bin/afplay /System/Library/Sounds/Basso.aiff
+    /usr/local/bin/growlnotify -t "$path" -m "$path\n\n$err" -a Finder -s; exit 1;
+}
+finder-reveal "$path"
+/usr/bin/afplay /System/Library/Sounds/Glass.aiff
+/usr/local/bin/growlnotify -t "$clipboard" -m "$path" -a Finder

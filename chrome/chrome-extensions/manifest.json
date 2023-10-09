@@ -1,0 +1,22 @@
+{
+  "name": "My Bookmarks",
+  "version": "1.1",
+  "description": "A browser action with a popup dump of all bookmarks, including search, add, edit and delete.",
+  "permissions": [
+    "bookmarks"
+  ],
+  "browser_action": {
+      "default_title": "My Bookmarks",
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+  },
+  "content_scripts": [
+  {
+      "matches": ["<all_urls>"],
+      "css": ["css/style.css"],
+      "js": ["jquery-1.10.2.min.js","content.js","my.min.js"]
+  }],
+
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+}

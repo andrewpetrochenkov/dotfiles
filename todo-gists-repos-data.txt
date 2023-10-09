@@ -1,0 +1,25 @@
+gists.json
+secret.json (gitignore)
+repos.json
+private.json (gitignore)
+---
+repos.json/
+gists.json/
+
+github-repos-json.py
+github-gists-json.py
+
+python -m github_gists_json > gists.json
+python -m github_gists_json > gists.json
+STDOUT for chaining. jc/etc
+---
+
+github-repos-gists
+вопрос auth vs public
+----
+python-gists
+и тд
+---
+filename.sh/filename.sh
+если first filename уникальный то все получится
+~/gist/
