@@ -1,0 +1,14 @@
+django-stdout2db
+django-stdout2file
+
+### Related
+[]()
+---
+причем можно management BaseCommand +views что-то
+---
+@stdout2db
+stdout2db
+try except with sys.stdout
+force stdout as tmp file?
+---
+tempfile -> StringIO лучше

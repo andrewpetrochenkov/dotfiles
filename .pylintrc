@@ -1,9 +1,10 @@
 [MASTER]
 disable=
     C0114, # missing-module-docstring
-ignore-patterns = migrations
+ignore-patterns = .*/migrations/.*
+ignore-paths = .*/migrations/.*
 load-plugins=pylint_django
-django-settings-module=django_migrations_settings
+django-settings-module=pylint_django_settings
 
 [MESSAGES CONTROL]
 disable=missing-docstring

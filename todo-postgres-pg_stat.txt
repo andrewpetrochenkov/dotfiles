@@ -1,2 +1,0 @@
-django-postgres-pg-stat
-pg-stat.xxx all views

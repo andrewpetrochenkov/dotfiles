@@ -1,2 +1,0 @@
-1) python code style checker
-.dev-scripts/, global check, etc

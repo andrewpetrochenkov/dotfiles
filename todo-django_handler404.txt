@@ -1,0 +1,38 @@
+
+def error_404(request, exception):
+    context = {}
+    response = render(request, 'encyclopedia/error_404.html', context=context)
+    response.status_code = 404
+    return response
+
+
+def error_500(request):
+
+handler404 = "views.error.error_404"
+handler500 = "views.error.error_500"
+details, base и тд 100500
+robots_txt
+login/auth/github
+urls
+---
+TEMPLATE_NAME_LIST = ['404','error_404'] и тд
+----
+django_handler404
+django_handler500
+
+Не работает handler404, почему?
+Кто может объяснить почему не работает handler404?
+
+Основной urls.py проекта:
+import project.settings
+from django.conf.urls import include, url
+from django.contrib import admin
+
+handler404 = 'project.views.handler404'
+
+urlpatterns = [
+    url(r'^$', include('apps.main.urls')),
+    url(r'^quote/', include('apps.quote.urls')),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^media/(.*)$', 'django.views.static.serve', {'document_root': project.settings.MEDIA_ROOT}),
+]

@@ -1,0 +1,5 @@
+./COMMIT_MESSAGE
+чтобы вручную вносить commit message
+date by default
+создавать и удалять скриптом
+exit if empty/etc checks

@@ -1,29 +1,11 @@
-remove todo.txt from dotfiles :)
----
-todo замути где-нить глобальный
----
-правой музычки качни
----
-список видео для зарядки
-https://www.youtube.com/watch?v=FRGDoQriHiw
 
-какой интерфейс? сайтец запилить?
----
-~/git/USER/donate/ repo +link
----
 gist tools (отдельный gist запилить со ссылками?)
 https://github.com/weakish/gister/
 
 https://stackoverflow.com/questions/2082723/how-do-you-manage-your-gists-on-github
-https://github.com/ksdev-pl/Gist-List
-
-https://github.com/weakish/gister/
 
 https://github.com/hackjutsu/Lepton
 
-
----
-mdx https://mdxjs.com
 
 ---
 https://github.com/maguowei/starred

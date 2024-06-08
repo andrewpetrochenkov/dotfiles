@@ -1,3 +1,0 @@
-admin
-docker images
-docker ps

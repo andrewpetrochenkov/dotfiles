@@ -10,13 +10,13 @@
 
     "font_face": "Source Code Pro",
 	"font_size": 18.0,
+    "sidebar_size_14": true,
 
 	"folder_exclude_patterns":
 	[
         "__pycache__",
         ".eggs",
         ".tox",
-        "build",
         "*.egg-info",
 		".svn", ".git", ".hg", "CVS",
         ".scannerwork",
