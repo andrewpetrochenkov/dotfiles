@@ -1,3 +1,0 @@
-requirements/base-requirements.txt
-requirements/custom-requirements.txt
-requirements.txt

@@ -1,5 +1,0 @@
-#!/usr/bin/env log-exec bash
-# -*- coding: utf-8 -*-
-
-selection="$(finder-selection)" || exit
-pbpaste > "$selection"/untitled

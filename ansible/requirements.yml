@@ -1,7 +1,0 @@
-# ansible-galaxy install -r ~/git/dotfiles/ansible-requirements.yml
-
-# https://github.com/ANXS/postgresql
-- src: ANXS.postgresql
-
-# https://github.com/nickjj/ansible-docker
-- src: nickjj.docker

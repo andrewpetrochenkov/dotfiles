@@ -8,4 +8,10 @@
 
 [ -f ~/.bash_prompt ] && { . ~/.bash_prompt || exit; }
 [ -f ~/.bashrc ] && { . ~/.bashrc || exit; }
+
+[ -f ../../../.env ] && { . ../../../.env || exit; }
+[ -f ../../.env ] && { . ../../.env || exit; }
+[ -f ../.env ] && { . ../.env || exit; }
+[ -f .env ] && { . .env || exit; }
 :
+

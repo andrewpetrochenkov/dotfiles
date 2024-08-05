@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-app-kill "iTunes" "iTerm" "Skype" "Sublime Text" "Google Chrome" "Terminal"
-osascript -e 'tell app "System Events" to restart'

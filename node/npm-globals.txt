@@ -50,8 +50,8 @@ node-polyfill-webpack-plugin
 node-sass
 optimize-css-assets-webpack-plugin
 postcss-loader
-postcss-node-sass
 @primer/css
+@primer/octicons
 
 react
 react-hot-loader
@@ -68,7 +68,6 @@ url-loader
 
 yarn
 
-wallpaper-cli
 webpack
 webpack-cli
 webpack-bundle-tracker
