@@ -1,0 +1,34 @@
+[
+    {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+b",
+        "command": "dotfiles-runners.run",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+d",
+        "command": "duplicate-file.duplicate",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "f13",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "f13",
+        "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "f13",
+        "command": "PASTE_VOICE_COMMAND_ID",
+        "when": "editorTextFocus || inputFocus || aichatInputFocus || composerFocus"
+    }
+]
