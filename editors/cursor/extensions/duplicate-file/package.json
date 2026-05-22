@@ -1,0 +1,21 @@
+{
+  "name": "duplicate-file",
+  "displayName": "Duplicate File",
+  "description": "Duplicate current file in the same directory (Sublime Text port)",
+  "publisher": "dotfiles",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onCommand:duplicate-file.duplicate"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "duplicate-file.duplicate",
+        "title": "Duplicate File"
+      }
+    ]
+  }
+}
