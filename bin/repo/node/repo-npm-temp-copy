@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+XDG_DATA_HOME="${XDG_DATA_HOME-$HOME/.local/share}"
+
+! [ -e package.json ] && echo "ERROR: setup.py NOT EXISTS" && exit 1
+
+readme_src="README-npmjs.com.md"
+
+path="$(temp-copy .)" || exit
+(
+    cd "$path" || exit
+    ( set -x; cp "$readme_src" README.md ) || exit
+    rm -fr .git .admin  .cache .config $'Icon\r' MANIFEST.in setup.cfg setup.py tests
+    find . -name __pycache__ -exec rm -fr {} \; 2> /dev/null
+)
+echo "$path"

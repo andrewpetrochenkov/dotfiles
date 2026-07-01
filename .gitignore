@@ -1,3 +1,5 @@
+/.env
+/.env.*
 /classifiers.txt
 /.config
 /.dev-scripts
@@ -5,6 +7,7 @@
 /.pypi-metadata
 /.repo-scripts
 /.scripts
+/_scripts
 /.pypi
 /.python
 /.readme-generator
@@ -184,11 +187,8 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
-env/
 venv/
-ENV/
 env.bak/
 venv.bak/
 
@@ -215,4 +215,10 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+services/_common/
+services/containers/*/logging.conf
+services/containers/*/apps/
+services/containers/*/settings/
+services/containers/*/tasks/
 

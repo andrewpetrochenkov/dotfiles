@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+usage() {
+    cat <<EOF 1>&2
+usage: $(basename $0) [OPTION]...
+EOF
+    [ "$1" = "-h" ] || [ "$1" = "--help" ]; exit
+}
+
+[ "$1" = "-h" ] || [ "$1" = "--help" ] && usage "$@"
+
+random="$(LC_ALL=C tr -dc 'A-Za-z0-9_' < /dev/urandom | head -c 32 | xargs)"
+dbname="tmp_$random"
+createdb "$@" "$dbname" || exit
+echo "$dbname"

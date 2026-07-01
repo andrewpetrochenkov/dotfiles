@@ -5,17 +5,7 @@
     },
     {
         "key": "cmd+b",
-        "command": "dotfiles-runners.run",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "cmd+d",
-        "command": "-editor.action.addSelectionToNextFindMatch",
-        "when": "editorFocus"
-    },
-    {
-        "key": "cmd+d",
-        "command": "duplicate-file.duplicate",
+        "command": "code-runner.run",
         "when": "editorTextFocus && !editorReadonly"
     },
     {

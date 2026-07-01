@@ -6,6 +6,9 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+# docker
+alias buildx='~/.docker/cli-plugins/docker-buildx'
+
 # ip
 alias ip="ipconfig getifaddr en1"
 

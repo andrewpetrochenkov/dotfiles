@@ -15,8 +15,8 @@ export PATH="/opt/homebrew/opt/postgresql@18/bin:${PATH}"
 export PATH="/opt/homebrew/opt/postgresql@19/bin:${PATH}"
 export PATH="/opt/homebrew/opt/postgresql@20/bin:${PATH}"
 
-# go
-export GOPATH="${HOME}/.go"
+# docker
+export PATH="${HOME}/.docker/cli-plugins:${PATH}"
 
 # node
 export PATH="${HOME}/.node/bin:${PATH}"
