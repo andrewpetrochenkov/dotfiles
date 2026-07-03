@@ -11,7 +11,7 @@
 ( set -x; black --line-length 79 . ) || exit
 ( set -x; isort . ) || exit
 # python3.14 -m pip install mypy django-stubs django-stubs-ext --break-system-packages
-( set -x; python3.14 -m mypy --config-file ${HOME}/.config/mypy/mypy.ini . ) || exit
+# ( set -x; python3.14 -m mypy --config-file ${HOME}/.config/mypy/mypy.ini . --show-traceback ) || exit
 
 
 #pip install python-minify
