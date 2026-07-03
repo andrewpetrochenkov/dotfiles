@@ -1,4 +1,5 @@
-DST_DIR=/opt/homebrew/opt/python@3.12/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages
+SITE_PACKAGES := $(shell python3 -c 'import sys; print([p for p in sys.path if "site-packages" in p][0])')
 
+.PHONY: all
 all:
-	cp sitecustomize.py $(DST_DIR)/sitecustomize.py
+	cp -R site-packages/* $(SITE_PACKAGES)/

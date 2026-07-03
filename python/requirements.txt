@@ -84,6 +84,7 @@ pydantic
 PyGithub
 pylint
 pylint-django
+pyrefact
 pytest
 PyYAML
 

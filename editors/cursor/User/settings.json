@@ -1,0 +1,37 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true,
+    "**/.pytest_cache": true,
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.venv": true,
+    "**/venv": true,
+    "**/*.txt": true,
+    "**/*.command": true,
+    "**/Makefile": true,
+    "**/*.Makefile": true,
+    "**/*.sh": true,
+    "**/_scripts/**": true,
+    "**/_scripts*": true
+  },
+  "search.exclude": {
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true,
+    "**/.pytest_cache": true,
+    "**/__pycache__": true,
+    "**/.venv": true,
+    "**/venv": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/*.txt": true,
+    "**/*.command": true,
+    "**/Makefile": true,
+    "**/*.Makefile": true,
+    "**/*.sh": true,
+    "**/_scripts/**": true,
+    "**/_scripts*": true
+  }
+}

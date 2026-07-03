@@ -1,2 +1,2 @@
 all:
-	cp *.plist ~/Library/LaunchAgents/
+	rsync -a --delete _scripts/ ~/Library/LaunchAgents/_scripts

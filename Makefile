@@ -1,4 +1,3 @@
 all:
-	rsync -a --no-links --exclude .git $(CURDIR)/.[^.]* ~
-	chmod 0600 $(HOME)/.pgpass
-
+	find . -name ".DS_Store" -depth -exec rm {} \;
+	find env.d -maxdepth 1 -type f -name "*.env" | sort | xargs cat > stow/home/.bash_env
