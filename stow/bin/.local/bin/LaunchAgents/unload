@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+[[ $# == 1 ]] && { ( set -x; launchctl unload "$1" ); exit; }
+[[ $# != 0 ]] && echo "usage: $0 path" && exit 1
+
+cd ~/Library/LaunchAgents/scripts
+( set -x; find . -name "*.plist" -mindepth 2 | xargs launchctl unload )
+( set -x; launchctl list | grep .py$ | awk '{print $3}' | xargs -I '{}' launchctl remove {} )

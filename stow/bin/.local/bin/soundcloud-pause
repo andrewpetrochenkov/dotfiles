@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+osascript <<EOF 1> /dev/null
+tell application "Google Chrome"
+    with timeout of 1 second
+        repeat with w in  every window
+            repeat with t in every tab in w
+                if "soundcloud.com/" is in (get URL of t) then
+                    set js to "//Set up jQuery
+var script = document.createElement('script');
+script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js';
+document.getElementsByTagName('head')[0].appendChild(script);
+\$('.playControl.playing').click();
+"
+                    tell t
+                        execute javascript(js)
+                    end tell
+                end if
+            end repeat
+        end repeat
+    end timeout
+end tell
+EOF

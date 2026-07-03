@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# -*- coding: utf-8 -*-
+{ set +x; } 2>/dev/null
+
+dbname="tts"
+
+f="${!#}"
+[[ "$@" != *"-f "* ]] && {
+    f="$(mkcache "$@")" || exit
+    echo "$@" > "$f"
+}
+grep -q "\[\[ru:" "$f" && {
+    f_ru="$(mkcache "$f")" || exit
+    ! [ -e "$f_ru" ] && { python3 -m ru_speech "$f" > "$f_ru" || exit; }
+    f="$f_ru"
+}
+
+v="$(say:voice)" || exit
+
+pg_isready | grep -q "accepting" || exit 0
+
+psql -c "INSERT INTO say(f,v) VALUES('$f','$v')" "$dbname"
+

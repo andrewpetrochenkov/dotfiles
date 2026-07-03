@@ -1,0 +1,5 @@
+services/_common/
+services/containers/*/logging.conf
+services/containers/*/apps/
+services/containers/*/settings/
+services/containers/*/tasks/

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+usage() {
+    echo "usage: $(basename $0) [-v voice] [-f in | message]" 1>&2
+    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+}
+
+[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+
+[[ $# == 0 ]] && usage
+
+# ~/Library/Caches/speech-cache/<hash>.aiff
+
+shasum="$(echo "$@" | shasum -a 1 | awk '{print $1}')"
+dst=~/Library/Caches/speech-cache/"$shasum".aiff
+! [ -e "$dst" ] && {
+    tmp="$(mktemp)" || exit
+    ! [ -e "${dst%/*}" ] && { mkdir -p "${dst%/*}" || exit; }
+    /usr/bin/say "$@" -o "$tmp" || exit
+    mv "$tmp" "$dst" || exit
+}
+echo "$dst"

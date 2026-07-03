@@ -1,0 +1,8 @@
+scrub-anchor "com.apple/*"
+nat-anchor "com.apple/*"
+rdr-anchor "com.apple/*"
+rdr-anchor "org.user.forwarding"
+dummynet-anchor "com.apple/*"
+anchor "com.apple/*"
+load anchor "com.apple" from "/etc/pf.anchors/com.apple"
+load anchor "org.user.forwarding" from "/etc/pf.anchors/org.user.forwarding"
