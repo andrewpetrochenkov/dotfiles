@@ -21,10 +21,6 @@ setup.cfg
 .npmignore
 db.sqlite3
 
-/node_modules
-package-lock.json
-webpack-stats.*.json
-
 # coverage
 htmlcov/
 .coverage
@@ -71,9 +67,10 @@ Icon?
 Icon\r
 ehthumbs.db
 Thumbs.db
-/node_modules
+node_modules
 package-lock.json
 webpack-stats.*.json
+
 
 
 /MANIFEST.in

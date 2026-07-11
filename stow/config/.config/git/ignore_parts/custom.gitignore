@@ -21,10 +21,6 @@ setup.cfg
 .npmignore
 db.sqlite3
 
-/node_modules
-package-lock.json
-webpack-stats.*.json
-
 # coverage
 htmlcov/
 .coverage

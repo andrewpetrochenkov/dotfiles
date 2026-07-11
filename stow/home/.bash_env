@@ -147,6 +147,35 @@ LS_COLORS=$LS_COLORS:'*Build.PL=4;1;33' # "
 NODE_PATH=/usr/local/lib/node_modules
 NODE_REPL_HISTORY=~/Library/Caches/node/node_repl_history
 
+export PATH="/usr/libexec:${PATH}"
+export PATH="/usr/local/bin:${PATH}"
+
+# macOS
+export PATH="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support:${PATH}"
+export PATH="/opt/homebrew/bin:${PATH}"
+# brew custom postgres versions
+export PATH="/opt/homebrew/opt/postgresql@14/bin:${PATH}"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:${PATH}"
+export PATH="/opt/homebrew/opt/postgresql@16/bin:${PATH}"
+export PATH="/opt/homebrew/opt/postgresql@17/bin:${PATH}"
+export PATH="/opt/homebrew/opt/postgresql@18/bin:${PATH}"
+export PATH="/opt/homebrew/opt/postgresql@19/bin:${PATH}"
+export PATH="/opt/homebrew/opt/postgresql@20/bin:${PATH}"
+
+# docker
+export PATH="${HOME}/.docker/cli-plugins:${PATH}"
+
+# node
+export PATH="${HOME}/.node/bin:${PATH}"
+
+# rust
+export PATH="${HOME}/.cargo/bin:${PATH}"
+
+# dotfiles bin
+export PATH="${HOME}/.local/share/bin:${PATH}"
+export PATH="${HOME}/bin:${PATH}"
+
+
 # /usr/local/var/postgres
 # /opt/homebrew/var/postgres
 # PGDATA="/opt/homebrew/var/postgres"
@@ -173,3 +202,6 @@ PYTHONSTARTUP=~/.pythonrc.py
 PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
 
+if [ -f "$HOME/.secret_env" ]; then
+    . "$HOME/.secret_env"
+fi;:

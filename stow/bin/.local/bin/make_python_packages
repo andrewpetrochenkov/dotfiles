@@ -8,8 +8,8 @@
 # pyrefact .
 # ruff check . --fix --exclude _DEPRECATED
 # flake8 --max-line-length=79 --exclude=_DEPRECATED .
-( set -x; black --line-length 79 . ) || exit
-( set -x; isort . ) || exit
+( set -x; black --config ~/.config/black/pyproject.toml . ) || exit
+( set -x; isort --settings-file ~/.config/isort/isort.cfg . ) || exit
 # python3.14 -m pip install mypy django-stubs django-stubs-ext --break-system-packages
 # ( set -x; python3.14 -m mypy --config-file ${HOME}/.config/mypy/mypy.ini . --show-traceback ) || exit
 

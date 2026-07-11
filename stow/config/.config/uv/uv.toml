@@ -1,0 +1,12 @@
+index-url = "https://mirrors.aliyun.com/pypi/simple/"
+
+extra-index-urls = [
+    "https://pypi.tuna.tsinghua.edu.cn/simple/",
+    "https://mirrors.ustc.edu.cn/pypi/simple/",
+    "https://mirror.baidu.com/pypi/simple/",
+    "https://mirrors.cloud.tencent.com/pypi/simple/"
+]
+
+[http]
+timeout = 120
+max-retries = 5

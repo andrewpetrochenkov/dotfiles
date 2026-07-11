@@ -15,4 +15,16 @@
 127.0.0.1   test.local
 127.0.0.1   host.docker.internal
 
+127.0.0.1 d2hjvmnsrtrg65.cloudfront.net
+127.0.0.1 cloudfront.net
+
+85.221.213.169 github_graphql_raw_prod
+185.221.213.245 github_accounts_buffer_prod
+185.221.213.245 github_rest_raw_prod
+185.221.213.245 github_graphql_nodes_prod
+185.221.213.245 github_id_resolver_prod
+185.221.213.245 github_gists_buffer_prod
+185.221.213.245 github_starred_gists_buffer_prod
+185.221.213.245 gistmanager_prod
+
 # ping localhost

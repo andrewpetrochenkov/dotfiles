@@ -12,6 +12,7 @@ awscli
 
 black
 
+celery[redis]
 click
 ConfigParser
 cssselect
