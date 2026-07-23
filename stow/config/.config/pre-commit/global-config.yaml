@@ -1,0 +1,27 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: Ruff Linter
+        entry: uv run ruff check --fix
+        language: system
+        types: [python]
+
+      - id: ruff-format
+        name: Ruff Formatter
+        entry: uv run ruff format
+        language: system
+        types: [python]
+
+      - id: check-yaml
+        name: Check YAML
+        entry: uv run python3 -m conversations_or_any_yaml_checker
+        language: system
+        files: \.(yaml|yml)$
+
+      - id: pytest-all
+        name: Run all workspace tests
+        entry: bash -c 'if uv pip list | grep -q "pytest"; then uv run pytest; else echo "pytest not configured, skipping."; fi'
+        language: system
+        pass_filenames: false
+        files: \.py$

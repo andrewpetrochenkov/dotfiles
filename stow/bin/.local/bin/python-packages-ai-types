@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+! [ -d packages ] && echo "ERROR: packages/ not exists" && exit 1
+
+export MODEL="openai/qwen3-coder"
+export PY_SIGCHECK_FILE=/tmp/py_sigcheck.$$.txt
+export AIDER_LOAD_FILE=/tmp/aider.load.$$.txt
+source "$HOME/.secrets.env" || exit
+
+set -o pipefail
+( set -x; python -m python_packages_sigcheck | tee "$PY_SIGCHECK_FILE" ) || exit
+set +o pipefail
+! [ -s "$PY_SIGCHECK_FILE" ] && exit 0
+( set -x; cat "$PY_SIGCHECK_FILE" ) || exit
+cat "$PY_SIGCHECK_FILE" | awk '{print "/add " $0}' > "$AIDER_LOAD_FILE"
+( set -x; aider \
+  --model "$MODEL" \
+  --load "$AIDER_LOAD_FILE" \
+  --message-file ~/git/ai-rules/python/types.md
+) || exit
+( set -x; git add . )

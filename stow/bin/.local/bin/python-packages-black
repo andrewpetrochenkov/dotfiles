@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+! [ -d packages ] && echo "ERROR: packages/ not exists" && exit 1
+
+( set -x; black --config ~/.config/black/pyproject.toml . )

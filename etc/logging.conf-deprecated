@@ -1,0 +1,26 @@
+[loggers]
+keys=root
+
+[handlers]
+keys=console, strict_debug
+
+[formatters]
+keys=simple
+
+[logger_root]
+level=%(log_level)s
+handlers=console, strict_debug
+
+[handler_console]
+class=StreamHandler
+level=DEBUG
+formatter=simple
+args=(sys.stdout,)
+
+[handler_strict_debug]
+class=platform_logging.StrictDebugHandler
+level=ERROR
+args=()
+
+[formatter_simple]
+format=[%(levelname)s %(asctime)s %(module)s] %(message)s

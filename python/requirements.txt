@@ -65,6 +65,7 @@ MarkdownPP
 nose
 nltk
 
+open-interpreter
 orjson
 
 pendulum
@@ -74,6 +75,8 @@ pipreqs
 psycopg2
 psycopg2cffi
 psutil
+pydantic
+pydantic_django
 pyquery
 python-memcached
 # psycopg2 or psycopg2-binary or psycopg2cffi

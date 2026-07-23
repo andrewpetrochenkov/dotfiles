@@ -17,6 +17,7 @@
 	filemode = false
 	bare = false
 	preloadindex = true
+	hooksPath = ~/.config/git/hooks
 
 # unicode support (git status):
 	precomposeunicode = true

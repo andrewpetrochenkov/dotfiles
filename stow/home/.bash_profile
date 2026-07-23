@@ -15,3 +15,6 @@
 [ -f .env ] && { . .env || exit; }
 :
 
+. "$HOME/.cargo/env"
+
+. "$HOME/.local/share/../bin/env"

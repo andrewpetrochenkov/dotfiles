@@ -10,3 +10,5 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # brew install zsh-completions
 fpath+=/opt/homebrew/share/zsh-completions
 autoload -Uz compinit && compinit
+
+. "$HOME/.local/share/../bin/env"

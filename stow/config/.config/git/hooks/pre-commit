@@ -1,0 +1,29 @@
+#!/bin/bash
+
+export PRE_COMMIT_HOME=~/.cache/pre-commit
+GLOBAL_CONFIG=~/.config/pre-commit/global-config.yaml
+LOCAL_CONFIG=.pre-commit-config.yaml
+
+echo "🔍 [Global Hook] Checking code style before commit..."
+
+if ! command -v pre-commit &> /dev/null; then
+    echo "⚠️ Warning: 'pre-commit' framework is not installed. Checks skipped."
+    exit 1
+fi
+
+if [ -f "$LOCAL_CONFIG" ]; then
+    echo "⚙️ Local project configuration found. Running local hooks..."
+    pre-commit run --config "$LOCAL_CONFIG" --files $(git diff --cached --name-only)
+else
+    if [ -f "$GLOBAL_CONFIG" ]; then
+        pre-commit run --config "$GLOBAL_CONFIG" --files $(git diff --cached --name-only)
+    else
+        echo "⚠️ Warning: Global config $GLOBAL_CONFIG not found."
+    fi
+fi
+
+EXIT_CODE=$?
+if [ $EXIT_CODE -ne 0 ]; then
+    echo "❌ [Global Hook] Fix style violations before committing."
+    exit $EXIT_CODE
+fi

@@ -5,3 +5,4 @@ all:
 	# custom hacks
 	rm -f $(HOME)/.docker/daemon.json
 	cp -f docker/.docker/daemon.json $(HOME)/.docker/daemon.json
+	chmod +x ~/.config/git/hooks/pre-commit
