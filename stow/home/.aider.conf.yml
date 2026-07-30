@@ -1,15 +1,16 @@
 add-gitignore-files: false
+analytics: false
 auto-commits: false
-cache-prompts: true
 browser: false
+cache-prompts: true
 show-model-warnings: false
 yes-always: true
 
 cache-prompts: true
 cache-keepalive-pings: 2
 
-chat-history-file: null
-input-history-file: null
+chat-history-file: /dev/null
+input-history-file: /dev/null
 
 model-metadata:
   openai/deepseek-v4-flash:

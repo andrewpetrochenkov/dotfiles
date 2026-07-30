@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 { set +x; } 2>/dev/null
 
-! [ -d packages ] && echo "ERROR: packages/ not exists" && exit 1
+! [ -d python/packages ] && echo "ERROR: python/packages/ not exists" && exit 1
 
 ( set -x; python3 -m packages_pyproject_toml_gen ) || exit
 

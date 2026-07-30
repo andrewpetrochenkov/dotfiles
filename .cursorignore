@@ -1,0 +1,43 @@
+# Виртуальное окружение (ГЛАВНЫЙ пожиратель токенов)
+.venv/
+venv/
+env/
+ENV/
+dist/
+build/
+*.egg-info/
+
+# Кэш линтеров, тестов и Python (Обязательно к исключению)
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.pydantic_preview_cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Системные папки и IDE
+.git/
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Логи и базы данных (ИИ не должен читать логи на мегабайты)
+*.log
+logs/
+*.sqlite3
+*.db
+
+# Документация и статика (Исключай, если не работаешь с фронтендом прямо сейчас)
+node_modules/
+.next/
+out/
+site/
+docs/_build/

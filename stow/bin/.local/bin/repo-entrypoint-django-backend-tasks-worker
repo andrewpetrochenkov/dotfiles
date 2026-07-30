@@ -1,0 +1,5 @@
+#!/bin/sh
+
+which python
+/usr/local/bin/python --version
+( set -x; python -m celery -A platform_celery_worker.app:app worker --loglevel="$CELERY_LOGLEVEL" --concurrency=1 --max-tasks-per-child="$CELERY_MAX_TASKS_PER_CHILD" -O fair )

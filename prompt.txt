@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+export MODEL="openai/deepseek-v4-flash"
+export AIDER_LOAD_FILE=$(mktemp)
+export PROMPT_FILE=~/git/ai-prompts/prompts/python/django/models_generator.md
+source "$HOME/.secrets.env" || exit
+
+! [ -d packages ] && echo "ERROR: ${PWD}/packages/ not exists" && exit 1
+! [ -e "${PROMPT_FILE}" ] && echo "ERROR: ${PROMPT_FILE} not exists" && exit 1
+
+( set -x; python -m python_packages_type_linter "$@" | awk '{print "/add " $0}' | tee "$AIDER_LOAD_FILE" ) || exit
+[ "${PIPESTATUS[0]}" -eq 0 ] && [ -s "$AIDER_LOAD_FILE" ] || exit 0
+
+( set -x; git add . ) || exit
+( set -x; aider \
+  --model "$MODEL" \
+  --load "$AIDER_LOAD_FILE" \
+  --message-file "${PROMPT_FILE}"
+) || exit
+( set -x; git add . )
+---
+запускаем из ~/git/{project}-python-packages репозитория
+~/git/{project}-sql репозиторий sql (надо использовать относительный путь)
+~/git/{project}-sql/sql/SCHEMA/{schema}/TABLE/{table}.sql sql файлы кода таблиц
+нужно сгененировать python пакеты для django apps с моделями 1в1
+
+пример
+~/git/{project}-python-packages/packages/{schema}/{schema}/__init__.py
+~/git/{project}-python-packages/packages/{schema}/{schema}/models/{table}.py
+
+инструкцию ИИ не обсуждаем. вопрос в том что передавать в aider?

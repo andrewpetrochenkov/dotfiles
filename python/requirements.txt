@@ -17,6 +17,7 @@ click
 ConfigParser
 cssselect
 
+datamodel-code-generator
 decorator
 discord
 django
@@ -37,6 +38,7 @@ django-freeze
 django-htmlmin
 django-manifest-loader
 django-medusa
+django-ninja
 django-querycount
 django-settings-export
 django-summernote
