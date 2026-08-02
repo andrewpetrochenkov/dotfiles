@@ -5,22 +5,25 @@ export PGSERVICEFILE=~/.pg_service.local.conf
 export PGPASSFILE="$HOME/.pgpass"
 export PGOPTIONS="--client-min-messages=warning"
 
-. local.env || exit 1
-[[ -z $PSQL_PGSERVICE ]] && echo "ERROR: local.env PSQL_PGSERVICE not defined" && exit 1
+. prod.env || exit 1
+[[ -z $PSQL_PGSERVICE ]] && echo "ERROR: prod.env PSQL_PGSERVICE not defined" && exit 1
 ! [ -e "$PGPASSFILE" ] && echo "ERROR: $PGPASSFILE not exists" && exit 1
 ! [ -e "$PGSERVICEFILE" ] && echo "ERROR: $PGSERVICEFILE not exists" && exit 1
 
 out=$(psql -d "service=$PSQL_PGSERVICE" -c "SELECT 1") || exit 1
 [[ -z "$out" ]] && echo "ERROR: empty output for service=$PSQL_PGSERVICE" && exit 1
 
-( set -x; make all ) || exit
 for attempt in {1..10}; do
     success=true
 
     while read -r sql_file; do
-        psql -v ON_ERROR_STOP=1 -d "service=$PSQL_PGSERVICE" -f "$sql_file" 1>/dev/null || success=false
-    done < <(find sql/_build -name "*.sql" -type f)
+        psql -d ON_ERROR_STOP=1 -d "service=$PSQL_PGSERVICE" -f "$sql_file" 2>/dev/null || success=false
+    done < <(find sql/src -name "*.sql" -type f)
 
     [[ "$success" = true ]] && exit 0
 done
-exit 1
+while read -r sql_file; do
+    echo "$sql_file"
+    psql -v ON_ERROR_STOP=1 -d "service=$PSQL_PGSERVICE" -f "$sql_file" 1>/dev/null || exit
+done < <(find sql/src -name "*.sql" -type f);:
+

@@ -61,9 +61,11 @@ jinja2
 humanfriendly
 
 linkheader_parser
-
 lxml
+
 MarkdownPP
+migradiff
+
 nose
 nltk
 
