@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+! [ -d .prompts ] && { ( set -x; mkdir .prompts ) || exit; }
+
+( set -x; repo-prompts-clean ) || exit
+( set -x; repo-prompts-build ) || exit
+while read -r md_file; do
+    MARKER_OUTPUT_FILE="$(dirname "$md_file")/✅_output.md"
+    [ -f "$MARKER_OUTPUT_FILE" ] && continue
+    ( set -x; prompt-run "$md_file" ) || exit
+done < <(find .prompts -type f -name "*.md" ! -path "*ask*")

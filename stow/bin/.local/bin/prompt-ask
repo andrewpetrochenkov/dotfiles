@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+[[ $# != 1 ]] && echo "usage: $0 path" && exit 1
+
+export AIDER_CHECK_UPDATE=false
+export ANSWER_FILE="${1%.md}_answer.md"
+export FILELIST="${1%.*}.filelist"
+
+[ -z "$AIDER_MODEL" ] && echo "ERROR: AIDER_MODEL must be defined" && exit 1
+! [ -e "$FILELIST" ] && echo "ERROR: $FILELIST not found" && exit 1
+
+mapfile -t FILE_ARGS < <(sed '/^$/q' "$FILELIST" | grep -v '^$')
+
+( set -x; prompt-build "$1" ) || exit
+( set -x; aider \
+  --ask \
+  --model "$AIDER_MODEL" \
+  --no-stream \
+  --message-file "$1" \
+  "${FILE_ARGS[@]}" > "$ANSWER_FILE" )
+( set -x; cat "$ANSWER_FILE" )

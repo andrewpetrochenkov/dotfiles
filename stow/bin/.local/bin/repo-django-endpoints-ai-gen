@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+export AIDER_MODEL="openai/qwen3-coder"
+export AIDER_LOAD_FILE=$(mktemp)
+export OPENAPI_YAML_FILE=python/packages/django_endpoints/src/openapi.yaml
+export PROMPT_FILE=~/git/ai-prompts/prompts/django/endpoints_gen.md
+source "$HOME/.secrets.env" || exit
+
+! [ -d python/packages ] && echo "ERROR: ${PWD}/python/packages/ not exists" && exit 1
+! [ -e "${PROMPT_FILE}" ] && echo "ERROR: ${PROMPT_FILE} not exists" && exit 1
+! [ -e "${OPENAPI_YAML_FILE}" ] && echo "ERROR: ${OPENAPI_YAML_FILE} not exists" && exit 1
+
+TARGET_INIT_DIR="python/packages/django_endpoints/src/django_endpoints/urls"
+mkdir -p "${TARGET_INIT_DIR}"
+touch "${TARGET_INIT_DIR}/__init__.py"
+
+( set -x; git init && git add . ) || exit
+( set -x; aider \
+  --model "$AIDER_MODEL" \
+  --architect \
+  --edit-format whole \
+  --no-stream \
+  --no-auto-commits \
+  --read python/packages/django_endpoints/src/openapi.yaml \
+  --message-file "${PROMPT_FILE}" \
+  python/packages/django_endpoints/src/django_endpoints/
+) || exit
+( set -x; git add . )
+
+
+

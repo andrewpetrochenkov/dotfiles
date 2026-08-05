@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+! [ -d .prompts ] && { ( set -x; mkdir .prompts ) || exit; }
+
+( set -x; repo-prompts-build ) || exit
+while read -r md_file; do
+    answer_file="${md_file%.md}_answer.md"
+    [ -e "$answer_file" ] && { echo "SKIP: $answer_file exists" } || {
+        ( set -x; prompt-ask "$md_file" ) || exit
+    }
+done < <(find .prompts -type f -name "*.md" | grep ask)

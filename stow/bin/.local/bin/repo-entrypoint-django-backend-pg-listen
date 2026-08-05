@@ -1,3 +1,0 @@
-#!/bin/sh
-
-.venv/bin/python -u /opt/django/manage.py run_critical_pg_listen

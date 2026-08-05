@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+[[ $# != 1 ]] && echo "usage: $0 path" && exit 1
+
+export AIDER_CHECK_UPDATE=false
+export FILELIST="${1%/*}/input.filelist"
+export MARKER_OUTPUT_FILE="${1%/*}/✅_output.md"
+
+[ -z "$AIDER_MODEL" ] && echo "ERROR: AIDER_MODEL must be defined" && exit 1
+! [ -e "$FILELIST" ] && echo "ERROR: $FILELIST not found" && exit 1
+
+mapfile -t FILE_ARGS < <(sed '/^$/q' "$FILELIST" | grep -v '^$')
+
+[ -e "${1%.md}.diff" ] && rm "${1%.md}.diff"
+( set -x; prompt-build "$1" ) || exit
+
+( set -x; aider \
+  --model "$AIDER_MODEL" \
+  --no-stream \
+  --color \
+  --editor-edit-format editor-diff \
+  --message-file "$1" \
+  "${FILE_ARGS[@]}" ) 2>&1 | tee "$MARKER_OUTPUT_FILE" || ( rm -f "$MARKER_OUTPUT_FILE" && exit 1 )
+

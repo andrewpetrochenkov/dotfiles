@@ -47,6 +47,7 @@ django-webpack-loader
 django-webpack5-loader
 docker
 drf-spectacular
+drf-yasg
 
 # eventlet
 # gevent

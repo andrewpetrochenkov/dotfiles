@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+! [ -d python/packages ] && echo "ERROR: ${PWD}/python/packages/ not exists" && exit 1
+! [ -d sql ] && echo "ERROR: ${PWD}/sql/ not exists" && exit 1
+
+export DJANGO_DATABASE_URL=postgres://postgres:@127.0.0.1:5433/codegen_local
+export PGSERVICEFILE=~/.pg_service.local.conf
+export PGPASSFILE="$HOME/.pgpass"
+export PGOPTIONS="--client-min-messages=warning"
+
+! [ -e "$PGPASSFILE" ] && echo "ERROR: $PGPASSFILE not exists" && exit 1
+! [ -e "$PGSERVICEFILE" ] && echo "ERROR: $PGSERVICEFILE not exists" && exit 1
+
+
+( set -x; python -m repo_sql_partition_gen ) || exit
+( set -x; PGSERVICE=codegen_local dropdb -f codegen_local ) || exit
+( set -x; PGSERVICE=codegen_local createdb codegen_local ) || exit
+for attempt in {1..10}; do
+    success=true
+    while read -r sql_file; do
+        psql -v ON_ERROR_STOP=1 -d "service=codegen_local" -f "$sql_file" &> /dev/null || success=false
+    done < <(find sql/src -name "*.sql" -type f | sort)
+done
+[[ $success == false ]] && {
+    while read -r sql_file; do
+        echo "$sql_file"
+        psql -v ON_ERROR_STOP=1 -d "service=codegen_local" -f "$sql_file" 1>/dev/null || exit
+    done < <(find sql/src -name "*.sql" -type f | sort)
+}
+( set -x; python -m repo_django_models_gen ) || exit
+( set -x; python -m repo_init_py_gen ) || exit
+( set -x; repo-python-packages-black ) || exit
+( set -x; repo-python-packages-isort ) || exit

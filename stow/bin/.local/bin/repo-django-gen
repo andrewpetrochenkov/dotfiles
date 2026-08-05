@@ -3,4 +3,5 @@
 
 ! [ -d python/packages ] && echo "ERROR: ${PWD}/python/packages/ not exists" && exit 1
 
-( set -x; python -m python_packages_tasks_init )
+[ -d sql ] && { ( set -x; repo-django-models-gen ) || exit; }
+( set -x; repo-django-contracts-gen ) || exit

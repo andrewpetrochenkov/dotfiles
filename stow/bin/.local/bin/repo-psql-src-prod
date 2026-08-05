@@ -17,7 +17,7 @@ for attempt in {1..10}; do
     success=true
 
     while read -r sql_file; do
-        psql -d ON_ERROR_STOP=1 -d "service=$PSQL_PGSERVICE" -f "$sql_file" 2>/dev/null || success=false
+        psql -d ON_ERROR_STOP=1 -d "service=$PSQL_PGSERVICE" -f "$sql_file" &>/dev/null || success=false
     done < <(find sql/src -name "*.sql" -type f)
 
     [[ "$success" = true ]] && exit 0

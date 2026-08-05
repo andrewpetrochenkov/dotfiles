@@ -19,3 +19,4 @@ source "$HOME/.secrets.env" || exit
   --message-file "${PROMPT_FILE}"
 ) || exit
 ( set -x; git add . )
+
