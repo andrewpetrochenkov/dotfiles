@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-{ set +x; } 2>/dev/null
-
-! [ -d python/packages ] && echo "ERROR: ${PWD}/python/packages/ not exists" && exit 1
-
-( set -x; python3 -m repo_django_endpoints_gen ) || exit
-( set -x; repo-python-packages-black ) || exit
-( set -x; repo-python-packages-isort ) || exit

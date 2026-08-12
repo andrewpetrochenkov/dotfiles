@@ -1,8 +1,0 @@
-#!/bin/sh
-
-# exec gunicorn - safe docker stop
-
-export PYTHONMALLOC=malloc
-export PYTHONOPTIMIZE=1
-lsof -t -i:$GUNICORN_PORT | xargs kill -9 2>/dev/null || true
-exec gunicorn platform_wsgi:application -c ~/git/platform-sources/docker/images/django-backend-base/gunicorn.conf.py

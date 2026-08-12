@@ -3,7 +3,11 @@
 
 ! [ -d python/packages ] && echo "ERROR: ${PWD}/python/packages/ not exists" && exit 1
 
-( set -x; repo-django-schemas-core-gen ) || exit
+# celery
+( set -x; repo-celery-init-py-gen ) || exit
+# django
+( set -x; repo-django-managers-init-py-gen ) || exit
+( set -x; repo-django-models-init-py-gen ) || exit
 ( set -x; repo-django-schemas-init-py-gen ) || exit
-( set -x; repo-django-serializers-core-gen ) || exit
 ( set -x; repo-django-serializers-init-py-gen ) || exit
+( set -x; repo-django-querysets-init-py-gen ) || exit

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+! [ -d python/packages ] && echo "ERROR: ${PWD}/python/packages/ not exists" && exit 1
+
+set -a; . local.env || exit;
+
+while read -r pkg; do
+    pkg_name="${pkg##*/}"
+    models_dir="$pkg/src/${pkg_name}/models"
+    [[ "$pkg" == *_contracts ]] && {
+        ( set -x; python -m django_package_schemas_clean "${pkg}" ) || exit
+    }
+    [ -d "${models_dir}" ] && {
+        ( set -x; .venv/bin/python -W ignore::FutureWarning -m django_package_schemas_gen "${pkg}" ) || exit
+    }
+done < <(find python/packages -mindepth 1 -maxdepth 1 -type d | grep -vE '(_contracts|_env|_tasks)$')

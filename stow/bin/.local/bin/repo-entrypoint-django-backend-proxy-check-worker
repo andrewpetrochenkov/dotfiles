@@ -1,3 +1,0 @@
-#!/bin/sh
-
-.venv/bin/python -u /opt/django/manage.py proxy_check_worker

@@ -1,13 +1,6 @@
-#!/usr/bin/env bash
-{ set +x; } 2>/dev/null
-
-! [ -d python/packages ] && echo "ERROR: ${PWD}/python/packages/ not exists" && exit 1
-
-set -a; . local.env || exit;
-
-( set -x; .venv/bin/python -m repo_django_package_serializers_gen "$1" ) || exit
-
-( set -x; repo-python-packages-black ) || exit
-( set -x; repo-python-packages-isort ) || exit
----
-перепиши надо искать в python/packages/ пакеты _contracts и запускать ( set -x; .venv/bin/python -m repo_django_package_serializers_gen "$1" )
+python/packages/{name}/src/{name}/__init__.py структура python
+нужны скрипты по работе с модификацией контента пакетов
+но что корректнее передавать в качестве пути к пакету
+1) python/packages/{name}
+2) python/packages/{name}/src/{name}
+3) передавать только name тк подразумевается hardcoded структура python/packages/{name}/src/{name}
