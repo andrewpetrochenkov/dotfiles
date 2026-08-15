@@ -7,7 +7,7 @@
 export PGSERVICEFILE=~/.pg_service.local.conf
 export PGPASSFILE="$HOME/.pgpass"
 export PGOPTIONS="--client-min-messages=warning"
-export MIGRA_TARGET_URL=postgresql://postgres:@127.0.0.1:5435/migra_local
+export MIGRA_TARGET_URL=postgresql://postgres:@127.0.0.1:5434/migra_local
 
 . local.env || exit 1
 [[ -z $DJANGO_DATABASE_URL ]] && echo "ERROR: local.env DJANGO_DATABASE_URL not defined" && exit 1

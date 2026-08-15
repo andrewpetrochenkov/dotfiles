@@ -3,6 +3,7 @@
 
 ! [ -d python/packages ] && echo "ERROR: ${PWD}/python/packages/ not exists" && exit 1
 
-while read -r init_dir; do
-    ( set -x; .venv/bin/python -m python_init_py_class_imports_gen "$init_dir" ) || exit
-done < <(find python/packages -name "serializers" -type d)
+while read -r dir_path; do
+    ( set -x; .venv/bin/python -m python_init_py_class_imports_gen "$dir_path" ) || exit
+    ! [ -e "${dir_path%/*}"/__init__.py ] && ( set -x; touch "${dir_path%/*}"/__init__.py )
+done < <(find python/packages -name "serializers" -type d);:

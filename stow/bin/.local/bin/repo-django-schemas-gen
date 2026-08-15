@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 { set +x; } 2>/dev/null
 
-( set -x; repo-django-schemas-core-gen && repo-django-schemas-init-py-gen )
+( set -x; repo-django-schemas-clean ) || exit
+( set -x; repo-django-schemas-core-gen ) || exit
+( set -x; repo-django-schemas-init-py-gen  ) || exit

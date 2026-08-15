@@ -46,6 +46,7 @@ django-tinymce
 django-webpack-loader
 django-webpack5-loader
 docker
+drf-pydantic
 drf-spectacular
 drf-yasg
 

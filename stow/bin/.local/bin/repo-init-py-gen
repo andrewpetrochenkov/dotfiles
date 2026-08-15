@@ -11,3 +11,4 @@
 ( set -x; repo-django-schemas-init-py-gen ) || exit
 ( set -x; repo-django-serializers-init-py-gen ) || exit
 ( set -x; repo-django-querysets-init-py-gen ) || exit
+( set -x; repo-django-utils-init-py-gen ) || exit

@@ -5,4 +5,4 @@
 
 while read -r init_dir; do
     ( set -x; .venv/bin/python -m python_init_py_class_imports_gen "$init_dir" ) || exit
-done < <(find python/packages -name "querysets" -type d -mindepth 3 -maxdepth 3)
+done < <(find python/packages -name "querysets" -type d -mindepth 3 -maxdepth 3);:
