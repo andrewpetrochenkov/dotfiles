@@ -75,8 +75,10 @@ open-interpreter
 orjson
 
 pendulum
+pigar
 pika
 pillow
+pip-tools
 pipreqs
 psycopg2
 psycopg2cffi

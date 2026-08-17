@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 { set +x; } 2>/dev/null
 
-# ( set -x; repo-git-pre-commit )
+# ( set -x; "${BASH_SOURCE%/*}"/repo-git-pre-commit )

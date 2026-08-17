@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 { set +x; } 2>/dev/null
 
-! [ -d .prompts ] && { ( set -x; mkdir .prompts ) || exit; }
-
 ( set -x; python3 -m repo_sql_partition_clean ) || exit
 ( set -x; python3 -m repo_sql_partition_gen ) || exit
 ( set -x; python3 -m repo_sql_tasks_trigger_clean ) || exit

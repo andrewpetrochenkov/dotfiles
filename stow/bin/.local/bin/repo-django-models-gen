@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 { set +x; } 2>/dev/null
 
-( set -x; repo-django-models-core-gen && repo-django-models-init-py-gen )
+( set -x; "${BASH_SOURCE%/*}"/repo-django-models-core-gen && repo-django-models-init-py-gen )

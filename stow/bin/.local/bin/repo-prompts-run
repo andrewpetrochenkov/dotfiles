@@ -3,8 +3,8 @@
 
 ! [ -d .prompts ] && { ( set -x; mkdir .prompts ) || exit; }
 
-( set -x; repo-prompts-clean ) || exit
-( set -x; repo-prompts-build ) || exit
+( set -x; "${BASH_SOURCE%/*}"/repo-prompts-clean ) || exit
+( set -x; "${BASH_SOURCE%/*}"/repo-prompts-build ) || exit
 while read -r md_file; do
     MARKER_OUTPUT_FILE="$(dirname "$md_file")/✅_output.md"
     [ -f "$MARKER_OUTPUT_FILE" ] && continue

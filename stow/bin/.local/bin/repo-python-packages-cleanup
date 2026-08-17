@@ -7,5 +7,5 @@
     ( set -x; python -m python_packages_django_models_init ) || exit
 }
 ( set -x; python -m python_packages_cleanup ) || exit
-( set -x; repo-python-packages-black ) || exit
-( set -x; repo-python-packages-isort ) || exit
+( set -x; "${BASH_SOURCE%/*}"/repo-python-packages-black ) || exit
+( set -x; "${BASH_SOURCE%/*}"/repo-python-packages-isort ) || exit

@@ -10,5 +10,5 @@ set -a; . local.env || exit
 [ -d sql ] && {
     ( set -x; python -m python_packages_tasks_init ) || exit
 }
-( set -x; repo-python-packages-black ) || exit
-( set -x; repo-python-packages-isort ) || exit
+( set -x; "${BASH_SOURCE%/*}"/repo-python-packages-black ) || exit
+( set -x; "${BASH_SOURCE%/*}"/repo-python-packages-isort ) || exit

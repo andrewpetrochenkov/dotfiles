@@ -6,7 +6,7 @@
 set -a; . local.env || exit
 export DJANGO_DATABASE_URL=postgres://postgres:@127.0.0.1:5433/codegen_local
 
-( set -x; repo-psql-codegen-init ) || exit
+( set -x; "${BASH_SOURCE%/*}"/repo-psql-codegen-init ) || exit
 while read -r pkg; do
     pkg_name="${pkg##*/}"
     ( set -x; .venv/bin/python -W ignore::FutureWarning -m django_package_schemas_gen "${pkg}" ) || exit

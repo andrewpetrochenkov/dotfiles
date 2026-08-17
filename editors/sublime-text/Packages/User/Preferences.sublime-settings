@@ -21,7 +21,7 @@
         ".pytest_cache",
         ".mypy_cache",
         ".ruff_cache",
-        ".venv",
+        ".venv"
     ],
     "file_exclude_patterns": [
         ".coverage",
@@ -61,6 +61,16 @@
         ".ruff_cache",
         ".venv",
         "venv"
+    ],
+    "binary_file_patterns": [
+        "python/.external_packages/*",
+        "__pycache__/*",
+        ".venv/*",
+        "*.jpg",
+        "*.jpeg",
+        "*.png",
+        "*.gif",
+        "*.zip"
     ],
     "bold_folder_labels": true,
     "caret_extra_width": 1,

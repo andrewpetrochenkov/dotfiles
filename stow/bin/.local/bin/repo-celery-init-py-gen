@@ -5,6 +5,8 @@
 
 set -a; . local.env || exit;
 
-while read -r pkg; do
-    ( set -x; .venv/bin/python -m celery_package_init_py_gen "$pkg" ) || exit
-done < <(find python/packages -type d -name "*_tasks" -mindepth 1 -maxdepth 1) || exit
+while read -r dir_path; do
+    [ -d "$dir_path"/tasks ] && {
+        ( set -x; .venv/bin/python -m celery_package_init_py_gen "$dir_path" ) || exit
+    }
+done < <(find python/packages -type d -name "*_tasks" -mindepth 1 -maxdepth 1);:

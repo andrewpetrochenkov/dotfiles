@@ -6,4 +6,4 @@
 
 MIGRA_SOURCE_URL="$DJANGO_DATABASE_URL"
 
-( set -x; repo-migra-local-print | psql -v ON_ERROR_STOP=1 --single-transaction "$MIGRA_SOURCE_URL" )
+( set -x; "${BASH_SOURCE%/*}"/repo-migra-local-print | psql -v ON_ERROR_STOP=1 --single-transaction "$MIGRA_SOURCE_URL" )

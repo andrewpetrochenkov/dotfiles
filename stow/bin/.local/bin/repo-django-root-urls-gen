@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 { set +x; } 2>/dev/null
 
-( set -x; python -m repo_django_root_urls_gen )
+[[ -z $(find python/packages -type d -name "*_views") ]] && exit
+( set -x; python -m repo_django_root_urls_gen ) || exit
 [ -e python/packages/django_root_urls_gen/src/django_root_urls_gen/__init__.py ] || {
     ( set -x; touch python/packages/django_root_urls_gen/src/django_root_urls_gen/__init__.py ) || exit
 }

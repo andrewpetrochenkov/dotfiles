@@ -3,7 +3,7 @@
 
 ! [ -d .prompts ] && { ( set -x; mkdir .prompts ) || exit; }
 
-( set -x; repo-prompts-build ) || exit
+( set -x; "${BASH_SOURCE%/*}"/repo-prompts-build ) || exit
 while read -r md_file; do
     answer_file="${md_file%.md}_answer.md"
     [ -e "$answer_file" ] && { echo "SKIP: $answer_file exists" } || {

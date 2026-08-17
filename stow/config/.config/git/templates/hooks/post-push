@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 { set +x; } 2>/dev/null
 
-# ( set -x; repo-git-post-push )
+# ( set -x; "${BASH_SOURCE%/*}"/repo-git-post-push )
