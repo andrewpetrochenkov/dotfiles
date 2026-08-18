@@ -5,4 +5,4 @@
 
 while read -r dir_path; do
     ( set -x; python -m python_package_pyproject_gen "$dir_path" ) || exit
-done < <(find python/packages .external_packages -type d -mindepth 1 -maxdepth 1)
+done < <(find python/packages -type d -mindepth 1 -maxdepth 1)
