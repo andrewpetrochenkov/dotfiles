@@ -3,7 +3,7 @@
 
 ! [ -d python/packages ] && echo "ERROR: ${PWD}/python/packages/ not exists" && exit 1
 
-set -a; . local.env || exit
+set -a; . .env.local || exit
 export DJANGO_DATABASE_URL=postgres://postgres:@127.0.0.1:5433/codegen_local
 
 ( set -x; "${BASH_SOURCE%/*}"/repo-psql-codegen-init ) || exit

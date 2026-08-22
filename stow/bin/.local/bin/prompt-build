@@ -6,7 +6,6 @@
 export AIDER_DISABLE_UPDATE_CHECK=1
 
 ( set -x; python3 -m prompt_context_find "$1" > "${1%/*}/input.filelist" ) || exit
-( set -x; cat "${1%/*}/input.filelist" | xargs -t python3 -m tree_print ) > "${1%/*}/input.tmp" || exit
 echo "" >> "${1%/*}/input.filelist" || exit
-cat "${1%/*}/input.tmp" >> "${1%/*}/input.filelist" || exit
-rm "${1%/*}/input.tmp"
+( set -x; cat "${1%/*}/input.filelist" | xargs -t python3 -m tree_print ) >> "${1%/*}/input.filelist" || exit
+

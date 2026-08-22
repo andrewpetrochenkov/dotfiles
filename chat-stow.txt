@@ -1,0 +1,11 @@
+dotfiles/stow/bin/.bin/ - ~/.bin/ файлы
+dotfiles/stow/config/.config/ - ~/.config/
+dotfiles/stow/home/.xxx - файлы для ~/.xxx
+dotfiles/stow/ssh/.ssh/ - ~/.ssh/ файлы
+
+а где в dotfiles/ держать macos файлы для stow
+~/Library/launchagents/xxx.plist, Library/launchagents/_scripts/xxx.sh
+---
+уверен что dotfiles/stow/macos/ а не dotfiles/macos/ или еще где-то?
+---
+sudo stow -d stow -t / имя_пакета

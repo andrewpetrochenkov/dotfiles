@@ -3,7 +3,7 @@
 
 ! [ -d python/packages ] && echo "ERROR: ${PWD}/python/packages/ not exists" && exit 1
 
-set -a; . local.env || exit;
+set -a; . .env.local || exit;
 
 while read -r dir_path; do
     [ -d "$dir_path"/tasks ] && {

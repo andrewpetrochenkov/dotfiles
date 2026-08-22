@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 { set +x; } 2>/dev/null
 
-! [ -d .prompts ] && { ( set -x; mkdir .prompts ) || exit; }
+# ! [ -d .prompts/ask ] && { ( set -x; mkdir .prompts ) || exit; }
+! [ -d .prompts/ask ] && { echo "SKIP: .prompts/ask not exists" && exit; }
 
-( set -x; "${BASH_SOURCE%/*}"/repo-prompts-build ) || exit
+( set -x; "${BASH_SOURCE%/*}"/repo-prompts-build ) &> /dev/null || exit
 while read -r md_file; do
     answer_file="${md_file%.md}_answer.md"
-    [ -e "$answer_file" ] && { echo "SKIP: $answer_file exists" } || {
-        ( set -x; prompt-ask "$md_file" ) || exit
-    }
-done < <(find .prompts -type f -name "*.md" | grep ask)
+    [ -e "$answer_file" ] && { echo "SKIP: $answer_file exists"; continue; }
+     ( set -x; prompt-ask "$md_file" ) || exit
+done < <(find .prompts/ask -type f -name "*.md" | grep -v "answer.md")

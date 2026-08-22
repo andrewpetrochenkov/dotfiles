@@ -3,7 +3,7 @@
 
 ! [ -d python/packages ] && echo "ERROR: ${PWD}/python/packages/ not exists" && exit 1
 
-set -a; . local.env || exit
+set -a; . .env.local || exit
 
 while read -r pkg; do
     ( set -x; .venv/bin/python -m django_package_serializers_gen "$pkg" ) || exit

@@ -3,7 +3,7 @@
 
 ! [ -d python/packages ] && echo "ERROR: ${PWD}/python/packages/ not exists" && exit 1
 
-set -a; . local.env || exit
+set -a; . .env.local || exit
 ( set -x; python -m python_packages_django_models_gen ) || exit
 ( set -x; python -m python_packages_init_gen ) || exit
 ( set -x; python -m repo_pyproject_gen ) || exit

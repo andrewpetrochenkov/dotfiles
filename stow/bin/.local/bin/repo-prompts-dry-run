@@ -7,4 +7,4 @@
 ( set -x; "${BASH_SOURCE%/*}"/repo-prompts-build ) || exit
 while read -r md_file; do
     ( set -x; prompt-dry-run "$md_file" ) || exit
-done < <(find .prompts -type f -name "*.md" ! -path "*ask*")
+done < <(find .prompts -type f -name "*.md" | grep -v "answer.md" | grep -v "ask")

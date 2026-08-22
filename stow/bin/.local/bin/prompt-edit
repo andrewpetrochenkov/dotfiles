@@ -17,8 +17,13 @@ mapfile -t FILE_ARGS < <(sed '/^$/q' "$FILELIST" | grep -v '^$')
 
 ( set -x; aider \
   --model "$AIDER_MODEL" \
+  --light-mode \
+  --map-tokens 0 \
+  --no-analytics \
+  --no-dry-run \
+  --no-notifications \
+  --no-pretty \
   --no-stream \
-  --color \
   --editor-edit-format editor-diff \
   --message-file "$1" \
   "${FILE_ARGS[@]}" ) 2>&1 | tee "$MARKER_OUTPUT_FILE" || ( rm -f "$MARKER_OUTPUT_FILE" && exit 1 )
